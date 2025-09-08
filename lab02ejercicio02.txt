@@ -1,0 +1,32 @@
+power_list([
+    power(logica, 100, 10),
+    power(sigilo, 150, 30),
+    power(fuerza, 250, 50)
+]).
+
+villain_list([
+    villain(riddler, 90, [logica, sigilo]),
+    villain(bane, 240, [fuerza])
+]).
+
+meta(estado([], _, _)).
+
+dfs(EstadoActual, _,[EstadoActual]) :-
+    meta(EstadoActual).
+
+dfs(EstadoActual, Visitados, [EstadoActual | CaminoRestante]) :-
+    siguiente_estado(EstadoActual, SiguienteEstado),
+    not(member(SiguienteEstado, Visitados)),
+    dfs(SiguienteEstado, [SiguienteEstado | Visitados], CaminoRestante).
+
+siguiente_estado(estado([villain(Nombre,Vida,Debilidades|RestoVillanos] ,Poderes,Energia),
+                 estado(VillanosRestantes, Poderes, NuevaEnergia)):-
+                 member(
+                 
+
+batman_can_win(EnergiaMaxima) :-
+    power_list(Superpoderes),
+    villain_list(Villanos),
+    % El estado inicial contiene todos los villanos, todos los poderes y la energía máxima.
+    EstadoInicial = estado(Villanos, Superpoderes, EnergiaMaxima),
+    dfs(EstadoInicial, [EstadoInicial]). %dfs(Estado,Visitados)
