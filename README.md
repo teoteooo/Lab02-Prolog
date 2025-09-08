@@ -133,6 +133,28 @@ batman_can_win(EnergiaMaxima) :-
 
 ---
 
+## Ejercicio 3 - 8 reinas
+
+Se quiere resolver el problema de las [8 reinas](https://es.wikipedia.org/wiki/Problema_de_las_ocho_reinas) usanado DFS, donde un estado se puede entender como una lista donde cada elemento representa
+la fila en la que esta esa reina, es decir [4,3] dice que en hay reinas en la columna 1, fila 4, y columna 2, fila 3.
+
+Asi se puede definir la regla de dfs para solo tener en cuenta la solucion final y no todo el camino.
+
+```
+dfs(EstadoActual, Visitados, SolucionFinal)
+```
+
+Asi se puede iniciar la busqueda en el espacio de soluciones.
+
+```
+solucion(Solucion) :-
+    EstadoInicial = [],
+    dfs(EstadoInicial, [EstadoInicial], Solucion).
+```
+
+---
+
+
 ## Retrospectiva
 1. ¿Cuál fue el tiempo total invertido en el laboratorio por cada uno de ustedes? (Horas/Hombre)
 2. ¿Cuál es el estado actual del laboratorio? ¿Por qué?
