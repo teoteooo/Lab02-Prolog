@@ -1,0 +1,12 @@
+¿Cuál fue el tiempo total invertido en el laboratorio por cada uno de ustedes? (Horas/Hombre)
+la clase completa del lunes, 3h, y 2 horas aca en casa.
+¿Cuál es el estado actual del laboratorio? ¿Por qué?
+completado.
+¿Cuál consideran fue el mayor logro? ¿Por qué?
+completar el laboratorio, y el ejercicio de los villanos estaba un poco complejo.
+¿Cuál consideran que fue el mayor problema técnico? ¿Qué hicieron para resolverlo?
+el proceso del ejercicio de los villanos, no sabia como se hacia, me toco investigar.
+¿Qué hicieron bien como equipo? ¿Qué se comprometen a hacer para mejorar los resultados?
+el compromiso, estoy de forma individual.
+¿Qué referencias usaron? ¿Cuál fue la más útil? Incluyan citas con estándares adecuados.
+la documentacion de prolog y un poco de ayuda de copilot.
