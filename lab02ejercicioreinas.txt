@@ -1,0 +1,35 @@
+solucion(S) :-
+    dfs([], S).
+
+dfs(Estado, Estado) :-
+    length(Estado, 8),      
+    es_valida(Estado).
+
+dfs(Estado, Solucion) :-
+    length(Estado, N),
+    N < 8,
+    between(1, 8, Fila),      
+    \+ member(Fila, Estado),  
+    append(Estado, [Fila], NuevoEstado),
+    es_valida(NuevoEstado),    
+    dfs(NuevoEstado, Solucion).
+
+es_valida(Estado) :-
+    \+ hay_conflicto(Estado).
+
+
+hay_conflicto(Estado) :-
+    append(Inicio, [Ultima], Estado),
+    length(Inicio, ColumnaUltima),
+    en_conflicto(Ultima, ColumnaUltima+1, Inicio).
+
+en_conflicto(_, _, []) :- fail.
+en_conflicto(Fila, Columna, [OtraFila | Resto]) :-
+    ColumnaAnterior is Columna - 1,
+    ( Fila =:= OtraFila                         
+    ; abs(Fila - OtraFila) =:= ColumnaAnterior  
+    ),
+    !.
+en_conflicto(Fila, Columna, [_ | Resto]) :-
+    Columna1 is Columna - 1,
+    en_conflicto(Fila, Columna1, Resto).
